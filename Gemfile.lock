@@ -1,0 +1,27 @@
+GIT
+  remote: git://github.com/apohllo/CKAN.git
+  revision: 0cb6e4468cb8ce25b9f69fd9b128a2b6f009102b
+  specs:
+    ckan (0.0.3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rack (1.6.5)
+    rack-protection (1.5.3)
+      rack
+    sinatra (1.4.7)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    tilt (2.0.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ckan!
+  sinatra
+
+BUNDLED WITH
+   1.13.7
