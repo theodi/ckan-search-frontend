@@ -1,0 +1,16 @@
+<% extra_data = YAML.load_file("data/#{package.name}.yml") rescue nil %>
+
+<h1><%= package.title %></h1>
+<p>id: <%= package.name %></p>
+<p><%= package.notes %></p>
+<% if extra_data %>
+  <p><%= extra_data["colour"] %></p>
+  <p><%= extra_data["flavour"] %></p>
+<% end %>
+
+<h2>Resources</h2>
+<table class='table table-striped'>
+  <% package.resources.each do |resource| %>
+    <%= erb :resource, :locals => {:resource => resource} %>
+  <% end %>
+</table>
