@@ -1,6 +1,17 @@
 <% extra_data = YAML.load_file("data/#{package.name}.yml") rescue nil %>
 
+<% 
+  has_shared_entity = if extra_data
+    extra_data["entities"].any?{|e| @entity_groups[e] > 1}
+  else
+    false
+  end
+%>
+
 <h1><%= package.title %></h1>
+<p>
+  Has shared entities?: <%= has_shared_entity %>
+</p>
 <p>id: <%= package.name %></p>
 <p><%= package.notes %></p>
 <% if extra_data %>
