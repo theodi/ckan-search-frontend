@@ -8,19 +8,22 @@
   end
 %>
 
-<h1><%= package.title %></h1>
-<p>
-  Has shared entities?: <%= has_shared_entity %>
-</p>
-<p>id: <%= package.name %></p>
-<p><%= package.notes %></p>
-<% if extra_data %>
-  <p>Entities: <%= extra_data["entities"] %></p>
-<% end %>
+<div class='panel <%= has_shared_entity ? 'panel-success' : 'panel-default' %>'>
+  <div class='panel-heading'>
+    <h3><%= package.title %></h3>
+  </div>
+  <div class="panel-body">
+    <p>id: <%= package.name %></p>
+    <p><%= package.notes %></p>
+    <% if extra_data %>
+      <p>Entities: <%= extra_data["entities"] %></p>
+    <% end %>
 
-<h2>Resources</h2>
-<table class='table table-striped'>
-  <% package.resources.each do |resource| %>
-    <%= erb :resource, :locals => {:resource => resource} %>
-  <% end %>
-</table>
+    <h2>Resources</h2>
+    <table class='table table-striped'>
+      <% package.resources.each do |resource| %>
+        <%= erb :resource, :locals => {:resource => resource} %>
+      <% end %>
+    </table>
+  </div>
+</div>
