@@ -1,2 +1,3 @@
-colour: Blue
-flavour: Coconut
+entities:
+  - Boris bikes
+  - fixie

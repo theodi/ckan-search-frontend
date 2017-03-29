@@ -1,2 +1,3 @@
-colour: red
-flavour: raspberry
+entities:
+  - Arson
+  - Murder

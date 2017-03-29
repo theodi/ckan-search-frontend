@@ -5,6 +5,17 @@
   </head>
   <body>
     <div class='container'>
+      <div class='well'>
+        <h2>All entities</h2>
+        <ul>
+          <% @entity_groups.each_pair do |entity, count| %>
+            <li>
+              <%= entity %>: <%= count %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      
       <% @packages.each do |p| %>
         <%= erb :package, :locals => {:package => p} %>
       <% end %>

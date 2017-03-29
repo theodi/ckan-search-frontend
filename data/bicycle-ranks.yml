@@ -1,2 +1,4 @@
-colour: Green
-flavour: Strawberry
+entities:
+  - fixie
+  - Brompton
+  - BMX
